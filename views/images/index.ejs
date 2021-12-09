@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Espace Administrateur
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../stylesheets/img_grid_style.css" rel="stylesheet">
+    <link href="../stylesheets/checkbox.css" rel="stylesheet">
+    <link href="../../../stylesheets/index_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body id='body'>
+    <div id="g_container">
+        <div class="img_tab_container">
+            <div class="grille">
+                <div class="buttonAddContainer">
+                    <a href="/spaceAdmin/new">
+                        <i class="buttonAdd fa fa-plus-circle"></i>
+                        <h5 class="addTitle">Ajouter</h5>
+                    </a>
+                </div>
+                <% if(locals.tb_img) {tb_img.forEach(element => { %>
+                <div class="img_container">
+                    <div class="img_link">
+                        <img class="img-fluid" src="<%= element.img_url %>" alt="<%= element.title %>">
+                    </div>
+                    <div id="box-place">
+                        <span class="bar-menu-burger"></span>
+                        <span class="bar-menu-burger"></span>
+                        <span class="bar-menu-burger"></span>
+                    </div>
+                    <div class="sous-menu">
+                        <ul class="listAdmin">
+                            <li><a href="/spaceAdmin/<%= element.id %>/edit">Modifier</a></li>
+                            <li><a href="/spaceAdmin/<%= element.id %>/suppression">Supprimer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <% })} %>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div class="containerTitleSide">
+                <h1 class="titleSide_menu">Space Admin Gallery</h1>
+            </div>
+            <div class="containerButton">
+                <a href="/connexion/logout"><button class='buttonSignUp buttonConnexion'>Déconnexion</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+    <%# THEME SHIFTER SCRIPT %> 
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</html>

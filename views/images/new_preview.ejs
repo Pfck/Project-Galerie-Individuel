@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../stylesheets/img_grid_style.css" rel="stylesheet">
+    <link href="../../../stylesheets/checkbox.css" rel="stylesheet">
+    <link href="../../../stylesheets/index_style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Preview</title>
+</head>
+
+<body id='body'>
+    <div id="g_container">
+        <div class="img_tab_container">
+            <div class="grille">
+                <div class="img_container">
+                    <div class="img_link">
+                        <img class="img-fluid" src="<%= new_data.img_url %>" alt="<%= new_data.title %>">
+                    </div>
+                </div>
+                <% if(locals.tb_img) {tb_img.forEach(element=> { %>
+                    <div class="img_container">
+                        <div class="img_link">
+                            <img class="img-fluid" src="<%= element.img_url %>" alt="<%= element.title %>">
+                        </div>
+                    </div>
+                    <% })} %>
+            </div>
+        </div>
+        <div class="side_menu">
+            <div>
+                <h2>Gestion Galerie (Preview)</h2>
+            </div>
+            <div>
+                <ul style="list-style: none; ">
+                </ul>
+                <div class='darkTheme'>
+                    <h6>Thème Sombre</h3>
+                        <input type="checkbox" id="theme_saver" onclick="theme_save()">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <div class="previewConfirm">
+            <form action="/spaceAdmin/new" class='form' method='post'>
+                <div class="hidden">
+                    <input class="hidden" type='text' name='titre' value="<%= new_data.titre %>">
+                </div>
+                <div class="hidden">
+                    <textarea class="hidden" id='lien' type='text' name='img_url'><%= new_data.img_url %></textarea>
+                </div>
+                <div class="hidden">
+                    <textarea class="hidden" type='text' name='description'><%= new_data.description %></textarea>
+                </div>
+                <button id='annuler' class='previewCancel' type="submit">Annuler</button>
+                <button id='Valider' class='previewValidate' type="submit" formaction="/spaceAdmin/image">Valider</button>
+            </form>
+        </div>
+    </div>
+</body>
+<%# THEME SHIFTER SCRIPT %>
+    <script src="../../../scripts/theme.js"></script>
+
+</html>

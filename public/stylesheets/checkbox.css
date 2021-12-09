@@ -1,0 +1,138 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img_container {
+    position: relative;
+}
+
+#box-place {
+    position: absolute;
+    width: 30px;
+    height: 26px;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: tranform .4s ease-in-out;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 3px;
+}
+
+.bar-menu-burger {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    z-index: 9999;
+}
+
+.bar-menu-burger:nth-child(1) {
+    top: 5px;
+    transition: all .4s ease-in-out;
+}
+
+.bar-menu-burger:nth-child(2) {
+    top: 12px;
+    transition: all .4s ease-in-out;
+}
+
+.bar-menu-burger:nth-child(3) {
+    top: 19px;
+    transition: all .4s ease-in-out;
+}
+
+.sous-menu {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    font-size: 18px;
+    transition: all .3s ease-in-out;
+}
+
+#box-place:hover ~ .sous-menu, .sous-menu:hover {
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s ease-in-out;
+}
+
+.listAdmin {
+    list-style: none;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.listAdmin li {
+    height: 30px;
+    padding: 20% 0;
+    width: 100%;
+}
+
+.listAdmin li a {
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.listAdmin li a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.listAdmin li a:hover::before {
+    transform: scaleX(1);
+}
+
+.listAdmin li a:link, .listAdmin li a:visited, .listAdmin li a:active, .listAdmin li a:hover{
+    color: white;
+}
+
+a .buttonAdd {
+    font-size: 80px;
+    color: rgb(161, 161, 248);
+    margin-bottom: 5px;
+}
+
+.buttonAddContainer {
+    position: relative;
+    margin: auto 0;
+    width: 80px;
+    height: 302px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+}
+
+.buttonAddContainer a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.buttonAddContainer a:hover {
+    color: #fff;
+    text-decoration: none;
+}

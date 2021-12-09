@@ -1,0 +1,50 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.fa-plus-circle{
+    font-size: 75px;
+    cursor : pointer;
+}
+.text{
+    position: relative;
+    top: 20px;
+    right: 58px;
+    cursor: pointer;
+}
+.buttonAjout .fa-plus-circle {
+    background-color: grey;
+    border: 2px;
+    border-color: black;
+    border-radius: 5px;
+    box-shadow: 2px;
+    height: 90px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#supprimer{
+    background-color: red;
+    border: 2px solid red;
+   border-radius: 4px;
+   color: #fff;
+   display: inline;
+   font-size: 16px;
+   padding: 10px;
+   margin-top: 20px;
+   width: 49%;
+   cursor: pointer;
+}
+#annuler{
+    background-color: #fff;
+    border: 2px solid black;
+   border-radius: 4px;
+   color: black;
+   display: inline;
+   font-size: 16px;
+   padding: 10px;
+   margin-top: 20px;
+   width: 49%;
+   cursor: pointer;
+}

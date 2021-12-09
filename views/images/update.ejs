@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../../stylesheets/index_style.css" rel="stylesheet">
+    <title>Modification</title>
+</head>
+<body class= 'dark'>
+    <div class = 'modal'>
+        <div class="modal-header">
+
+            <%# Button de fermeture de la page %>
+            <i class="fa fa-times buttonSignUp" onclick="location.href = '/spaceAdmin/index'"></i>
+            <h2>Modifier l'image</h2>
+        </div>
+
+            <%# Formulaire d'update pre-rempli %>
+            <form action="/spaceAdmin/<%=form_data.id%>/edit/preview" class='form' method ='post'>
+
+                <%# Champs correspondant aux champs de la BDD grace a value="" %>
+                <div class="form-control">
+                    <label for ='Titre'>Titre</label>
+                    <input id='titre' type ='text' placeholder="Titre" name ='titre' value="<%=form_data.titre%>">
+                </div>
+                <div class="form-control">
+                    <label for ='Lien'>Lien</label>
+                    <textarea class = "textarea2" id='lien' type ='text' placeholder="Lien" name ='img_url'><%=form_data.img_url%></textarea>
+                </div>
+                <div class="form-control">
+                    <label for ='Description'>Description</label>
+                    <textarea id='description' type ='text' placeholder="Description" name ='description'><%=form_data.description%></textarea>
+                </div>
+
+                <%# 1er button de submit %>
+                <button id ='preview' class='buttonSignUp' type="submit" name="valider" value="preview">Preview</button>
+
+                <%# 2eme button de submit celui-ci va submit ailleurs que le premier grace au formaction %>
+                <button class='validationUpdate' type="submit" formaction="/spaceAdmin/<%=form_data.id%>">Valider</button>
+            </form>
+    </div>
+</body>
+</html>

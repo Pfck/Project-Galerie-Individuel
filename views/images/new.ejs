@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../../stylesheets/index_style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class='dark'>
+    <div class='modal'>
+        <div class="modal-header">
+            <i class="fa fa-times buttonSignUp" onclick="location.href = '/spaceAdmin/index'"></i>
+            <h2>Ajout d'une image</h2>
+        </div>
+            <form action="/spaceAdmin/new/preview" class='form' method ='post'>
+                <div class="form-control">
+                    <label for ='Titre'>Titre</label>
+                    <input id='titre' type ='text' placeholder="Titre" name='titre' value="<% if (locals.form_data) {%><%= form_data.titre %><% } %>">
+                </div>
+                <div class="form-control">
+                    <label for ='Lien'>Lien</label>
+                    <textarea id='lien' type ='text' name='img_url' placeholder="Lien"><% if (locals.form_data) {%><%= form_data.img_url %><% } %></textarea>
+                </div>
+                <div class="form-control">
+                    <label for ='Description'>Description</label>
+                    <textarea id='description' type ='text' name='description' placeholder="Description"><% if (locals.form_data) {%><%= form_data.description %><% } %></textarea>
+                </div>
+                <button id ='preview'class='buttonSignUp' type="submit">Preview</button>
+                <button id ='connexion'class='buttonSignUp' formaction="/spaceAdmin/image" type="submit">Valider</button>
+            </form>
+    </div>
+</body>
+</html>

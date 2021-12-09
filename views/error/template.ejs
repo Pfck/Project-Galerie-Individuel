@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error <%= error.code %> </title>
+</head>
+<body>
+    <div id="error_scree" style="text-align: center;">
+        <% if (locals.error.code == 404) { %>
+            <img src="https://www.prestashop.com/sites/default/files/styles/blog_750x320/public/blog/2019/10/banner_error_404.jpg?itok=eAS4swln" alt=""><br>
+            <a href="/"><h1>Home</h1></a>
+        <% } %>
+        <% if (locals.error.code == 500) { %>
+            <img src="https://cdn.freebiesupply.com/images/large/1x/500-internal-server-error-page-template-w68.jpg" alt=""><br>
+            
+        <% } %>
+    </div>
+</body>
+</html>
